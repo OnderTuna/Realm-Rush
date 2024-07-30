@@ -6,14 +6,14 @@ public class EnemyMover : MonoBehaviour
 {
     [SerializeField] private List<Waypoint> path;
     IEnumerator followNumerator;
-    private float delayTime = 1f;
+    [SerializeField][Range(0f, 5f)] private float speed = 1f;
 
     void Start()
     {
         followNumerator = FollowPath();
         StartCoroutine(followNumerator);
     }
-    
+
     void Update()
     {
         
@@ -23,8 +23,18 @@ public class EnemyMover : MonoBehaviour
     {
         for (int i = 0; i < path.Count; i++)
         {
-            transform.position = path[i].transform.position;
-            yield return new WaitForSeconds(delayTime);
+            Vector3 startPos = transform.position;
+            Vector3 endPos = path[i].transform.position;
+            float travelPercent = 0f;
+
+            transform.LookAt(endPos);
+
+            while (travelPercent < 1)
+            {
+                travelPercent += Time.deltaTime * speed;
+                transform.position = Vector3.Lerp(startPos, endPos, travelPercent);
+                yield return new WaitForEndOfFrame();
+            }
         }
     }
 }
