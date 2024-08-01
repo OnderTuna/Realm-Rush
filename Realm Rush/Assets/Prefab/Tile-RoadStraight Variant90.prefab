@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2813617415677359392, guid: 3a595c9c8c5aed24a91d94348e9da844, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813617415677359392, guid: 3a595c9c8c5aed24a91d94348e9da844, type: 3}
+      propertyPath: towerObject
+      value: 
+      objectReference: {fileID: 3219458064393657486, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
     - target: {fileID: 3184919214728799316, guid: 3a595c9c8c5aed24a91d94348e9da844, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
