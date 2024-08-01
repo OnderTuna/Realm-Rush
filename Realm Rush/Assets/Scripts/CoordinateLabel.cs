@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,9 +9,13 @@ public class CoordinateLabel : MonoBehaviour
 {
     private Vector2Int tileCoordinate = new Vector2Int();
     private TextMeshPro coordinateText;
+    private Waypoint waypointScript;
+    [SerializeField] Color defaultColor = Color.black;
+    [SerializeField] Color fadedColor = Color.white;
 
     void Awake()
     {
+        waypointScript = GetComponentInParent<Waypoint>();
         coordinateText = GetComponent<TextMeshPro>();
         DisplayCoordinates();
     }
@@ -22,7 +27,9 @@ public class CoordinateLabel : MonoBehaviour
             DisplayCoordinates();
             UpdateTileName();
         }
-    }
+        ColorTheCoordinates();
+        ToogleCoordinates();
+    }    
 
     private void DisplayCoordinates()
     {
@@ -34,5 +41,25 @@ public class CoordinateLabel : MonoBehaviour
     private void UpdateTileName()
     {
         transform.parent.name = tileCoordinate.ToString();
+    }
+
+    private void ColorTheCoordinates()
+    {
+        if(waypointScript.IsPlaceable)
+        {
+            coordinateText.color = defaultColor;
+        }
+        else
+        {
+            coordinateText.color = fadedColor;
+        }
+    }
+
+    private void ToogleCoordinates()
+    {
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            coordinateText.enabled = !coordinateText.enabled;
+        }
     }
 }
