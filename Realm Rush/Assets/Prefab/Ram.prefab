@@ -130,14 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 498cf97028994b8408ea62a663d0eebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  path: []
   speed: 1
 --- !u!114 &5115968867656999156
 MonoBehaviour:
@@ -151,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21fabe43e9dd0f2488e4638302034460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHealth: 5
 --- !u!65 &2673938584078785608
 BoxCollider:
   m_ObjectHideFlags: 0
