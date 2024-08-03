@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private int enemyHealth = 5;
+    [SerializeField] private int currentHealth = 0;
+    private int maxHealth = 5;
 
-    void Start()
+    void OnEnable()
     {
-        
+        currentHealth = maxHealth;
     }
 
     
@@ -24,10 +25,10 @@ public class EnemyHealth : MonoBehaviour
 
     private void ProcessHit()
     {
-        enemyHealth--;
-        if(enemyHealth <= 0)
+        currentHealth--;
+        if(currentHealth <= 0)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

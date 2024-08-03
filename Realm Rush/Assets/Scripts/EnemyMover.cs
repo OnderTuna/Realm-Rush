@@ -8,16 +8,17 @@ public class EnemyMover : MonoBehaviour
     IEnumerator followNumerator;
     [SerializeField][Range(0f, 5f)] private float speed = 1f;
 
-    private void Awake()
+    private void OnEnable()
     {
         FindPath();
+        ReturnToStart();
+        followNumerator = FollowPath();
+        StartCoroutine(followNumerator);
     }
 
     void Start()
     {
-        followNumerator = FollowPath();
-        StartCoroutine(followNumerator);
-        ReturnToStart();
+        
     }
 
     void Update()
@@ -58,7 +59,7 @@ public class EnemyMover : MonoBehaviour
             }
         }
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     private void ReturnToStart()
