@@ -1,18 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int rewardValue = 25;
+    [SerializeField] private int goldPenalty = 25;
+    Bank bankScript;
+
+    private void Awake()
     {
-        
+        bankScript = FindObjectOfType<Bank>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RewardGold()
     {
-        
+        if (bankScript == null)
+        {
+            return;
+        }
+        else
+        {
+            bankScript.Deposit(rewardValue);
+        }
+    }
+
+    public void StealGold()
+    {
+        if(bankScript == null)
+        {
+            return;
+        }
+        else
+        {
+            bankScript.Withdraw(goldPenalty);
+        }
     }
 }
