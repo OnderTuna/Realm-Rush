@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 6131056645070147807}
+  maxRange: 15
+  fireEffect: {fileID: 964900728826603542}
 --- !u!1 &6131056645070147807
 GameObject:
   m_ObjectHideFlags: 0
