@@ -79,7 +79,7 @@ PrefabInstance:
     - target: {fileID: 6845563310236996984, guid: 56b4ba511b49f1346b2eaf7d3cfad380, type: 3}
       propertyPath: towerObject
       value: 
-      objectReference: {fileID: 3219458064393657486, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
+      objectReference: {fileID: 6800686304266044227, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

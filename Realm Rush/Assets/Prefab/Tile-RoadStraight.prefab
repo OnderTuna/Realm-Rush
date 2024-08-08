@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 2339194378762055436, guid: 41001f065efc1a0488f98d922eb2158d, type: 3}
       propertyPath: towerObject
       value: 
-      objectReference: {fileID: 3219458064393657486, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
+      objectReference: {fileID: 6800686304266044227, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
     - target: {fileID: 3120605194220945016, guid: 41001f065efc1a0488f98d922eb2158d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

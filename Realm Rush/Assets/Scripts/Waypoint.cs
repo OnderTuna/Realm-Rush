@@ -13,7 +13,7 @@ public class Waypoint : MonoBehaviour
         }
     }
 
-    [SerializeField] private GameObject towerObject;
+    [SerializeField] private Tower towerObject;
 
     void Start()
     {
@@ -29,8 +29,8 @@ public class Waypoint : MonoBehaviour
     {
         if(isPlaceable)
         {
-            Instantiate(towerObject, gameObject.transform.position, Quaternion.identity);
-            isPlaceable = false;
+            bool isPlaced = towerObject.CreateTower(towerObject, gameObject.transform.position, Quaternion.identity);
+            isPlaceable = !isPlaced;
         }
     }
 }

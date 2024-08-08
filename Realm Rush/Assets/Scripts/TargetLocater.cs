@@ -10,7 +10,6 @@ public class TargetLocater : MonoBehaviour
     [SerializeField] private ParticleSystem fireEffect;
     private Transform target;
 
-
     void Start()
     {
 
