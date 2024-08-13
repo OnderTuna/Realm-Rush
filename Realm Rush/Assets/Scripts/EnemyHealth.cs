@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Enemy))]
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private int currentHealth = 0;
-    private int maxHealth = 5;
+    private int currentHealth = 0;
+    [SerializeField] private int maxHealth = 5;
+    [SerializeField] private int difficultyRamp = 1;
     Enemy enemyScript;
 
     void OnEnable()
@@ -29,6 +31,7 @@ public class EnemyHealth : MonoBehaviour
         if(currentHealth <= 0)
         {
             enemyScript.RewardGold();
+            maxHealth += difficultyRamp;
             gameObject.SetActive(false);
         }
     }
