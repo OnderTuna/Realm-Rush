@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 
 [ExecuteAlways]
+[RequireComponent(typeof(TextMeshPro))]
 public class CoordinateLabel : MonoBehaviour
 {
     private Vector2Int tileCoordinate = new Vector2Int();

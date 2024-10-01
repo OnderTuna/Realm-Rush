@@ -1582,6 +1582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 5040643765344069697, guid: b940df629b09f434dbb9fd487257db6c, type: 3}
+  delayTime: 1
   poolSize: 5
 --- !u!4 &1352233549
 Transform:
